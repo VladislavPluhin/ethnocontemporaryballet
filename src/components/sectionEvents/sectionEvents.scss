@@ -1,0 +1,21 @@
+.section-events {
+    text-align: center;
+    
+    .events-row {
+        display: flex;
+        flex-wrap: wrap;
+        
+        .col {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 10px;
+            display: flex;
+            @media only screen and (min-width:767px) {
+                max-width: 47%;
+            }
+            @media only screen and (min-width: 1024px) {
+                max-width: 31.3%;
+            }
+        }
+    }
+}

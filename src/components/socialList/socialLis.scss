@@ -1,0 +1,21 @@
+.social-list {
+    display: flex;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    li {
+        margin-right: 17px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+        transition:  color .3s ease;
+        color: #fff;
+        &:hover {
+          color:  #6db5ff;
+        }
+    }
+}
