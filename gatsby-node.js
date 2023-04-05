@@ -43,8 +43,8 @@ exports.createPages = async ({ graphql, actions, reporter  }) => {
   
   if (artists.length > 0) {
     artists.forEach((artist, index) => {
-      const previousArtistSlug = index === 0 ? '0' : artists[index - 1].slug
-      const nextArtistSlug = index === artists.length - 1 ? '0' : artists[index + 1].slug
+      const previousArtistSlug = index === 0 ? '/' : artists[index - 1].slug
+      const nextArtistSlug = index === artists.length - 1 ? '/' : artists[index + 1].slug
       createPage({
         path: `/team/${artist.slug}`,
         component: artistsPage,
@@ -60,8 +60,8 @@ exports.createPages = async ({ graphql, actions, reporter  }) => {
   
   if (projects.length > 0) {
     projects.forEach((eventData, index) => {
-      const previousEventSlug = index === 0 ? '0' : projects[index - 1].slug
-      const nextEventSlug = index === projects.length - 1 ? '0' : projects[index + 1].slug
+      const previousEventSlug = index === 0 ? '/' : projects[index - 1].slug
+      const nextEventSlug = index === projects.length - 1 ? '/' : projects[index + 1].slug
       createPage({
         path: `/projects/${eventData.slug}`,
         component: projectsPage,
@@ -77,8 +77,8 @@ exports.createPages = async ({ graphql, actions, reporter  }) => {
 
   if (eventsNew.length > 0) {
     eventsNew.forEach((eventData, index) => {
-      const previousEventSlug = index === 0 ? '0' : eventsNew[index - 1].slug
-      const nextEventSlug = index === eventsNew.length - 1 ? '0' : eventsNew[index + 1].slug
+      const previousEventSlug = index === 0 ? '/' : eventsNew[index - 1].slug
+      const nextEventSlug = index === eventsNew.length - 1 ? '/' : eventsNew[index + 1].slug
       createPage({
         path: `/new-events/${eventData.slug}`,
         component: newEventPage,
