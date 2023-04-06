@@ -6,8 +6,8 @@ function SocialList({data, nameOfBlock}) {
         <ul className="social-list">
              { data.map((icon)=> {
                 return (
-                    <li key={nameOfBlock + icon.id}>
-                        <a href={icon.IconLinkUrl} className={'icon-' + icon.nameIcon}></a>
+                    <li key={nameOfBlock + "-" + icon.nameIcon}>
+                        <a href={icon.iconLinkUrl} className={'icon-' + icon.nameIcon}></a>
                     </li>
                     )
                 })}
