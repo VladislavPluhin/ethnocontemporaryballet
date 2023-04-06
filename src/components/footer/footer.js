@@ -124,11 +124,9 @@ const handleClick = (e) => {
                               className="footer__list-item">
                               <Link
                                 to={
-                                  element.textUrl
-                                    ? `${element.textUrl}${item.slug}`
-                                    : `/${item.slug}`
-                                }
-                              >
+                                  item.slug
+                                    ? `${element.opener.textUrl}${item.slug}`
+                                    : `/${item.slug}`}>
                                 {item.nameEvent ?? item.namePersone}
                               </Link>
                             </li>
