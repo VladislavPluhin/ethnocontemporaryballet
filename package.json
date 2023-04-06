@@ -1,8 +1,8 @@
 {
   "name": "ethno-contemporary-ballet",
   "version": "1.0.0",
-  "homepage": "https://vladpluhin.github.io/ethnocontemporaryballet/",
-  "private": false,
+  "homepage": "https://vladpluhin.github.io/ethnocontemporaryballet",
+  "private": true,
   "description": "ethno-contemporary-ballet",
   "author": "VladislavPluhin",
   "keywords": [
@@ -11,10 +11,10 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages "
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^5.5.0",

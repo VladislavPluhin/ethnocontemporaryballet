@@ -2,7 +2,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: "/ethnocontemporaryballet",
   siteMetadata: {
     title: `EthnoContemporaryBallet`,
     description: `EthnoContemporaryBallet`,
@@ -19,5 +18,5 @@ module.exports = {
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass"]
   ,
-  
+  pathPrefix: "/ethnocontemporaryballet",
 };
