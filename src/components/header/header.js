@@ -8,7 +8,6 @@ import  SocialList from '../socialList/socialList';
 const Header = ({initBurger} ) => {
  
   const data = useStaticQuery(graphql`{
-
     contentfulHeader {
       nameBlock
       headerLogo {
@@ -20,7 +19,7 @@ const Header = ({initBurger} ) => {
       }
     }
     allContentfulHeaderNavigationList(
-      filter: {nameBlock: {eq: " headerNavigationList"}}
+      filter: {nameBlock: {eq: "HeaderNavigationList"}}
     ) {
       nodes {
         nameBlock
@@ -40,12 +39,10 @@ const Header = ({initBurger} ) => {
         iconLinkUrl
       }
     }
-}
-  `)
+  }`)
   const navData = [...data.allContentfulHeaderNavigationList.nodes[0].navLinkList]
   const headerLogo = {...data.contentfulHeader.headerLogo.logoImage}
   const socialList = [...data.allContentfulIconLink.nodes]
-  console.log(navData)
   function headerOnScroll (){
     var className = "scrolled";
     var scrollTrigger = 1;

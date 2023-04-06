@@ -10,7 +10,6 @@ export default ({data}) => {
   const nextPage= {...data.next.nodes[0]}
   const prevPage= {...data.previous.nodes[0]}
   const eventData= {...data.allContentfulCardEvent.nodes[0]}
-  console.log(eventData.projectgallery)
      return (
        <Layout>
          <section className="section-content">

@@ -28,11 +28,13 @@ useEffect(() => {
    return (
         <ul className="header__list">
             { navData.map((element)=> {
-              return (   
-                <li key={element.id} className="header__list-item">
-                    <Link to={element.textUrl}>{element.textNavigationLink}</Link>
-                </li>
-              )
+                if(element.textUrl) {
+                  return (
+                    <li key={element?.id} className="header__list-item">
+                      <Link to={element.textUrl}>{element.textNavigationLink}</Link>
+                    </li>
+                  )
+                } 
             })}
         </ul>
    )

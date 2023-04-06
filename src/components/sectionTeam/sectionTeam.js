@@ -9,7 +9,6 @@ function SectionTeam ( {data, indent=false})  {
   const sectionData = {...data[0]};
   const descriptionData =  sorts.getsortedCards(data, "blockDescription")
   const personData= sorts.getsortedCards(data, "person")
-  console.log(descriptionData)
   return (
     <section className={indent ? 'section-team section-indent' : 'section-team'}  style={{backgroundColor: sectionData.sectionColor? sectionData.sectionColor : '' }}>
         <div className='container'>
