@@ -28,7 +28,7 @@ function SectionMain ({data})  {
                         {slide.slideBgImage.url && <img src={slide?.slideBgImage.url} alt={slide.slideBgImage?.description}/>}
                         { slide.layerOnImage && <span className="bg-image-layer"  style={{backgroundColor: slide.layerOnImage ?  slide.layerOnImage : '' }}></span> }
                     </div>
-                      <div className="sectionMain__slide" >
+                      <div className="sectionMain__slide">
                         <div className="container">
                         <div className="description">
                           {slide.title && <h1 className="title"  style={{color: slide.colorText ? slide.colorText : '' }}>{slide.title}</h1>}

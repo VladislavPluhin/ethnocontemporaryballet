@@ -5,6 +5,7 @@ import './richText.scss';
 
 
 function RichText ({data , colorText='inherit'})  {
+
     const options = {
         renderMark: {
           [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
@@ -25,6 +26,7 @@ function RichText ({data , colorText='inherit'})  {
       }
     return (
       <div className='text'  style={{color: colorText}}>
+        
           {renderRichText(data, options)} 
       </div>
                

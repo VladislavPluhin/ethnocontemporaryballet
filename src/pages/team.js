@@ -7,7 +7,9 @@ import * as sorts from '../components/sorts/sorts'
 
 const IndexPage =({data}) => {
   const pageData = {...data.allContentfulPage.nodes[0].sectionContents}
-    return (
+  
+  return (
+
       <Layout>
            <SectionTeam  data={ sorts.getsortedData(pageData, "ModelTeam")}  indent={true}/>
       </Layout>
