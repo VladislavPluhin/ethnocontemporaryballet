@@ -7,8 +7,8 @@ import  SocialList from '../socialList/socialList';
 
 const Header = ({initBurger} ) => {
  
-  const data = useStaticQuery(graphql`
-  {
+  const data = useStaticQuery(graphql`{
+
     contentfulHeader {
       nameBlock
       headerLogo {
@@ -19,11 +19,17 @@ const Header = ({initBurger} ) => {
         nameBlock
       }
     }
-    allContentfulHeaderNavigationList {
+    allContentfulHeaderNavigationList(
+      filter: {nameBlock: {eq: " headerNavigationList"}}
+    ) {
       nodes {
+        nameBlock
         navLinkList {
-          textUrl
-          textNavigationLink
+          ... on ContentfulContentMainModel {
+            id
+            textUrl
+            textNavigationLink
+          }
         }
       }
     }
@@ -34,7 +40,7 @@ const Header = ({initBurger} ) => {
         iconLinkUrl
       }
     }
-  }
+}
   `)
   const navData = [...data.allContentfulHeaderNavigationList.nodes[0].navLinkList]
   const headerLogo = {...data.contentfulHeader.headerLogo.logoImage}
