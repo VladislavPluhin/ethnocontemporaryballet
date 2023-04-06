@@ -19,6 +19,14 @@ const Header = ({initBurger} ) => {
         nameBlock
       }
     }
+    allContentfulHeaderNavigationList {
+      nodes {
+        navLinkList {
+          textUrl
+          textNavigationLink
+        }
+      }
+    }
     allContentfulIconLink {
       nodes {
         nameLink
@@ -26,34 +34,12 @@ const Header = ({initBurger} ) => {
         iconLinkUrl
       }
     }
-    allContentfulContentMainModel(filter: {ifNavPages: {eq: true}}) {
-      nodes {
-        textNavigationLink
-        textUrl
-        id
-        nameBlock
-        sectionBlocks {
-          ... on ContentfulCardEvent {
-            id
-            nameBlock
-            slug
-            nameEvent
-          }
-          ... on ContentfulPersonCard {
-            id
-            slug
-            namePersone
-            nameBlock
-          }
-        }
-      }
-    }
   }
   `)
-  const navData = [...data.allContentfulContentMainModel.nodes]
+  const navData = [...data.allContentfulHeaderNavigationList.nodes[0].navLinkList]
   const headerLogo = {...data.contentfulHeader.headerLogo.logoImage}
   const socialList = [...data.allContentfulIconLink.nodes]
-
+  console.log(navData)
   function headerOnScroll (){
     var className = "scrolled";
     var scrollTrigger = 1;
