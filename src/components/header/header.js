@@ -19,13 +19,11 @@ const Header = ({initBurger} ) => {
         nameBlock
       }
     }
-    allContentfulSimpleLink {
-    
+    allContentfulIconLink {
       nodes {
-        id
         nameLink
         nameIcon
-        simpleLinkUrl
+        iconLinkUrl
       }
     }
     allContentfulContentMainModel(filter: {ifNavPages: {eq: true}}) {
@@ -54,7 +52,7 @@ const Header = ({initBurger} ) => {
   `)
   const navData = [...data.allContentfulContentMainModel.nodes]
   const headerLogo = {...data.contentfulHeader.headerLogo.logoImage}
-  const socialList = [...data.allContentfulSimpleLink.nodes]
+  const socialList = [...data.allContentfulIconLink.nodes]
 
   function headerOnScroll (){
     var className = "scrolled";
@@ -85,9 +83,8 @@ const Header = ({initBurger} ) => {
                 <span></span>
             </span>
             <div className="header__navigation">
-            <SocialList data={socialList} nameOfBlock={"header"}/>
+              <SocialList data={socialList} nameOfBlock={"header"}/>
               <Navigation navData= {navData} id={'header'}/>
-             
             </div>
          </nav>
        

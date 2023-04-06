@@ -17,13 +17,11 @@ const Footer =  ({}) => {
          nameBlock
        }
      }
-     allContentfulSimpleLink {
-     
+     allContentfulIconLink {
       nodes {
-        id
         nameLink
         nameIcon
-        simpleLinkUrl
+        iconLinkUrl
       }
     }
      allContentfulContentMainModel(filter: {ifNavPages: {eq: true}}) {
@@ -52,7 +50,7 @@ const Footer =  ({}) => {
  `)
   const navData = [...data.allContentfulContentMainModel.nodes]
   const headerLogo = {...data.contentfulHeader.headerLogo.logoImage}
-  const socialList = [...data.allContentfulSimpleLink.nodes]
+  const socialList = [...data.allContentfulIconLink.nodes]
 
  useEffect(() => {
   const submenuOpeners = Array.from( document.querySelectorAll('.footer__title'));

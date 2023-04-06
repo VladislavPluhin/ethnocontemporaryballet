@@ -7,7 +7,7 @@ function SocialList({data, nameOfBlock}) {
              { data.map((icon)=> {
                 return (
                     <li key={nameOfBlock + icon.id}>
-                        <a href={icon.simpleLinkUrl} className={'icon-' + icon.nameIcon}></a>
+                        <a href={icon.iconLinkUrl} className={'icon-' + icon.nameIcon}></a>
                     </li>
                     )
                 })}
