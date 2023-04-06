@@ -12,10 +12,10 @@ function SectionTeam ( {data, indent=false})  {
   return (
     <section className={indent ? 'section-team section-indent' : 'section-team'}  style={{backgroundColor: sectionData.sectionColor? sectionData.sectionColor : '' }}>
         <div className='container'>
-        <div className="description">
-            {descriptionData[0].title && <h2 className="title">{descriptionData[0].title}</h2>} 
-            {descriptionData[0].description && <RichText data={descriptionData[0].description} />}
-         </div>
+          <div className="description">
+              {descriptionData[0].title && <h2 className="title">{descriptionData[0].title}</h2>} 
+              {descriptionData[0].description && <RichText data={descriptionData[0].description} />}
+          </div>
           <div className="row team-row">
             {personData.map((person)=> {
                   return ( 

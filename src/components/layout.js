@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
       setIsActiveBurger(true)
     }
   }
+  
   return (
     <div className={isActiveBurger ? "wrapper burger-active" : 'wrapper' } id='wrapper' >
         <Header initBurger={initBurger} />

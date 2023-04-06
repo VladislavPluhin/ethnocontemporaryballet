@@ -19,10 +19,13 @@
     
     &:hover {
         box-shadow: 0px 0px 15px #382e2e94;
+       
         .newEvent {
             box-shadow: 3px 3px 27px #61b8eb;
         }
+       
         .link {
+           
             &:before {
                 transform: scaleX(1);
                 opacity: 1;
@@ -33,6 +36,7 @@
                 transform: translateX(4px); 
             }
         }
+       
         img {
             transform: scale(1.07);
         }
@@ -82,6 +86,7 @@
             font-size: 28px;
         }
     }
+    
     &__body {
         margin-top: -15px;
         background-color: #0b00680d;

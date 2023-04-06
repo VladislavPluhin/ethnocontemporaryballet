@@ -121,8 +121,7 @@ const handleClick = (e) => {
                           return (
                             <li
                               key={`footer_${item.id}`}
-                              className="footer__list-item"
-                            >
+                              className="footer__list-item">
                               <Link
                                 to={
                                   element.textUrl
