@@ -168,7 +168,7 @@
 
     .social-holder {
         position: relative;
-        padding: 15px;
+        padding: 15px 15px 0;
 
         &:after {
             position: absolute;
@@ -189,5 +189,14 @@ a.footer__title {
         &:after {
             transform: translateX(9px);
         }
+    }
+}
+
+.copyright-holder {
+    padding-top: 23px;
+    p {
+        color: rgb(255 255 255 / 30%);
+        font-size: 14px;
+        margin: 0;
     }
 }

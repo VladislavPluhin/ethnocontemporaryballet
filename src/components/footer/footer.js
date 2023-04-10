@@ -7,7 +7,9 @@ const Footer = () => {
   const submenuOpeners = useRef([]);
   const data = useStaticQuery(graphql`
     {
+      
       contentfulFooterNavigation {
+        copyright
         navigationHolder {
           nameBlock
           opener {
@@ -78,7 +80,7 @@ const handleClick = (e) => {
   const navData = data.contentfulFooterNavigation.navigationHolder;
   const headerLogo = data.contentfulHeader.headerLogo.logoImage;
   const socialList = data.allContentfulIconLink.nodes;
-
+  console.log(data)
   return (
     <footer className="footer">
       <div className="container">
@@ -141,6 +143,9 @@ const handleClick = (e) => {
         </nav>
         <div className="social-holder">
           <SocialList data={socialList} nameOfBlock={"footer"} />
+          <div className="copyright-holder">
+              <p>{data.contentfulFooterNavigation.copyright}</p>
+          </div>
         </div>
       </div>
     </footer>
