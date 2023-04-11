@@ -8,7 +8,6 @@ import Layout from "../components/layout"
 const IndexPage =({data}) => {
   const sectionData ={...data.contentfulContentMainModel.sectionBlocks[0]}
   const supportData ={...data.contentfulIconLink}
-  console.log(supportData)
     return (
       <Layout>
         <section className='section-about section-indent'  style={{backgroundColor: sectionData.sectionColor? sectionData.sectionColor : '' }}>

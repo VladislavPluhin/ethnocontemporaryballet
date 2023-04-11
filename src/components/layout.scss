@@ -457,3 +457,28 @@ body::-webkit-scrollbar-thumb {
 .description {
   margin-bottom: 40px;
 }
+
+.support-us {
+  padding: 15px 0;
+  h5 {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    margin-bottom: 0;
+    line-height: 1;
+    a {
+        transition: opacity .3s ease;
+        width: 25px;
+        display: block;
+        margin-left: 15px;
+        img {
+            width: 100%;
+        }
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+}

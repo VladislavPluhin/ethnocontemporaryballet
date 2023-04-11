@@ -43,6 +43,18 @@ const Footer = () => {
           iconLinkUrl
         }
       }
+      contentfulIconLink(nameIcon: {eq: "Patreon"}) {
+        id
+        imageIcon {
+          url
+          title
+          publicUrl
+        }
+        nameLink
+        nameIcon
+        text
+        iconLinkUrl
+      }
       contentfulHeader {
         nameBlock
         headerLogo {
@@ -55,28 +67,29 @@ const Footer = () => {
       }
     }
   `);
-const handleClick = (e) => {
-    const wrapper = e.currentTarget.closest("div.footer__list-item");
 
-    if (wrapper.classList.contains("active")) {
-      wrapper.classList.remove("active");
-      return;
-    } else {
-      wrapper.classList.toggle("active");
-    }
-  };
-  useEffect(() => {
-    if (submenuOpeners.current) {
-      submenuOpeners.current.forEach((item) => {
-        item.addEventListener("click", handleClick);
-      });
-  
-    }
-  }, []);
-  
-  
-  
+  const handleClick = (e) => {
+      const wrapper = e.currentTarget.closest("div.footer__list-item");
 
+      if (wrapper.classList.contains("active")) {
+        wrapper.classList.remove("active");
+        return;
+      } else {
+        wrapper.classList.toggle("active");
+      }
+    };
+    useEffect(() => {
+      if (submenuOpeners.current) {
+        submenuOpeners.current.forEach((item) => {
+          item.addEventListener("click", handleClick);
+        });
+    
+      }
+    }, []);
+  
+  
+  
+  const supportData ={...data.contentfulIconLink}
   const navData = data.contentfulFooterNavigation.navigationHolder;
   const headerLogo = data.contentfulHeader.headerLogo.logoImage;
   const socialList = data.allContentfulIconLink.nodes;
@@ -143,6 +156,14 @@ const handleClick = (e) => {
         </nav>
         <div className="social-holder">
           <SocialList data={socialList} nameOfBlock={"footer"} />
+          <div className="support-us">
+                <h5  >
+                  <span>{supportData.text}</span>
+                  <a href={supportData.iconLinkUrl}>
+                    <img  src={supportData.imageIcon.url} alt={supportData.imageIcon.title}/>
+                  </a>
+                </h5>
+          </div>
           <div className="copyright-holder">
               <p>{data.contentfulFooterNavigation.copyright}</p>
           </div>
