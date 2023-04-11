@@ -13,26 +13,15 @@
         }
     }
 
-    .container {
-        max-width: 1000px;
-    }
-    h5 {
-        text-transform: capitalize;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-        a {
-            transition: opacity .3s ease;
-            width: 25px;
-            display: block;
-            margin-left: 15px;
-            img {
-                width: 100%;
-            }
-            &:hover {
-                opacity: .7;
-            }
-        }
-    }
+  .description {
+    margin-bottom: 15px;
+  }
+
+  .text {
+    margin-bottom: 0;
+  }
+
+  .support-us {
+    margin-bottom: 40px;
+  }
 }

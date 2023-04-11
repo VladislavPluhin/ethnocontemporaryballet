@@ -482,3 +482,9 @@ body::-webkit-scrollbar-thumb {
     }
 }
 }
+
+
+body.active-popup {
+  overflow: hidden;
+  height: 100%;
+}
