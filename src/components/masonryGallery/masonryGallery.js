@@ -15,14 +15,15 @@ function MasonryGallery({data}) {
       };
 
     function getImageUrl(e) {
-        const imageurl = e.target.dataset.url;
+        e.stopPropagation()
+        const imageurl = e.currentTarget.dataset.url;
         setImageUrl(imageurl)
         setactivePopup(true)
         document.body.classList.add('active-popup')
     }
 
     function hidePopup () {
-        setImageUrl(null)
+        setImageUrl()
         setactivePopup(false)
         document.body.classList.remove('active-popup')
     }
@@ -40,8 +41,10 @@ function MasonryGallery({data}) {
                     {imagesData.map((image) => (
                     <div className="image-masonry" key={image.id}>
                         <img src={image.url} alt={image.title} />
-                        <span className="icon" data-url={image.url} onClick={(e)=> {getImageUrl(e)}}>
-                            &#x1F50E;&#xFE0E;</span>
+                        <div className="icon-wrapper" data-url={image.url} onClick={(e)=> {getImageUrl(e)}}>
+                            <span className="icon" >&#x1F50E;&#xFE0E;</span>
+                        </div>
+                        
                     </div>
                     ))}
                 </Masonry>
@@ -50,9 +53,9 @@ function MasonryGallery({data}) {
                 
                 <div className="popup-body">
                     <span onClick={hidePopup}> &#9587;</span>
-                      {imageUrl &&  <div className="popup-image">
-                                 <img src={imageUrl} alt='our project' />
-                    </div>} 
+                      <div className="popup-image">
+                            <img src={imageUrl} alt='our project' />
+                    </div>
                 </div>
             </div>
         </section>
