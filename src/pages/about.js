@@ -41,7 +41,7 @@ export default IndexPage
 
 export const query = graphql`
 {
-  contentfulIconLink(nameIcon: {eq: "Patreon"}) {
+  contentfulIconLink(nameIcon: {eq: "PayPal"}) {
     id
     imageIcon {
       url

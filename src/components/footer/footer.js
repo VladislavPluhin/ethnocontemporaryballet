@@ -43,7 +43,7 @@ const Footer = () => {
           iconLinkUrl
         }
       }
-      contentfulIconLink(nameIcon: {eq: "Patreon"}) {
+      contentfulIconLink(nameIcon: {eq: "PayPal"}) {
         id
         imageIcon {
           url
