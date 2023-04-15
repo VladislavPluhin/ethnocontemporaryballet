@@ -7,19 +7,13 @@ jobs:
   deploy:
    runs-on: ubuntu-18.04
    steps:
-    - name:  Dispatch
-      uses: peter-evans/repository-dispatch@v1
-      with:
-       token: ${{ secrets.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 }}
-       repository: VladPluhin/ethnocontemporaryballet
-       event-type: my-event
-       client-payload: '{"key1": "value1", "key2": "value2"}'
+  
     - uses: actions/checkout@v2
     
     - name: Setup Node
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '18'
 
     - name: Cache dependencies
       uses: actions/cache@v1
