@@ -10,6 +10,7 @@ const IndexPage =({data}) => {
   const sectionData ={...data.contentfulContentMainModel.sectionBlocks[0]}
   const supportData ={...data.contentfulIconLink}
   const galleryData = {...data.contentfulGallery}
+  
     return (
       <Layout>
         <section className='section-about section-indent'  style={{backgroundColor: sectionData.sectionColor? sectionData.sectionColor : '' }}>
