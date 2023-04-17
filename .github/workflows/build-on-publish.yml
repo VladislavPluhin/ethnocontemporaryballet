@@ -1,34 +1,28 @@
-name: Eleventy Build on Contentful Publish Event
+name: Generate and commit readme
+# This workflow is triggered on pushes to the repository.
 on:
+  push:
   repository_dispatch:
     types: [publish-event]
 
 jobs:
-  deploy:
-   runs-on: ubuntu-22.04
-   steps:
-  
-    - uses: actions/checkout@v2
-    
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '18'
+  build:
+    name: Generate and commit readme
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Cache dependencies
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+      - run: npm install
 
-    - run: npm ci
-    - run: npm run build
+      - run: node ./index.js
+        env:
+          SPACE_ID: ${{ secrets.SPACE_ID }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-       deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-       publish_dir: _site
-    
+      - run: |
+          git status
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Updated readme"
+          git push
