@@ -1,0 +1,67 @@
+.person-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 50%;
+    width: 100%;
+    display: flex;
+    &:hover {
+        
+        .person-card__body {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+   
+    .link-image {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+    
+    .person-card__img {
+        width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0% 0%;
+        }
+    }
+    .person-card__body {
+        padding: 20px 15px;
+        position: absolute;
+        bottom: 0;
+        transition: all .3s ease;
+        transform: translateY(200%);
+        left: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        @media (min-width: 1023px) {
+            padding: 40px 15px;
+        }
+       
+        .bg-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: .6;
+            z-index: -1;
+        }
+    }
+    
+    .person-card__title {
+        font-size: 25px;
+    }
+    
+    .person-card__position {
+        font-size: 25px;
+    }
+}
