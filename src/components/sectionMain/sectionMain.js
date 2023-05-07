@@ -25,15 +25,15 @@ function SectionMain ({data})  {
             return (
                   <SwiperSlide key={slide.title +  id}>
                       <div className="bg-image"  style={{backgroundColor: '#000'}}>
-                          {slide.slideBgImage.url && <img src={slide?.slideBgImage.url} alt={slide.slideBgImage?.description}/>}
-                          { slide.layerOnImage && <span className="bg-image-layer"  style={{backgroundColor: slide.layerOnImage ?  slide.layerOnImage : '' }}></span> }
+                          {slide?.slideBgImage?.url  && <img src={slide?.slideBgImage.url} alt={slide.slideBgImage?.description}/>}
+                          { slide?.layerOnImage && <span className="bg-image-layer"  style={{backgroundColor: slide.layerOnImage ?  slide.layerOnImage : '' }}></span> }
                       </div>
                         <div className="sectionMain__slide">
                           <div className="container">
                           <div className="description">
-                            {slide.title && <h1 className="title"  style={{color: slide.colorText ? slide.colorText : '' }}>{slide.title}</h1>}
-                            {slide.subtitle && <h6 className="subtitle"  style={{color: slide.colorText ? slide.colorText : '' }}>{slide.subtitle}</h6>}
-                            {slide.colorText &&  <RichText data={slide.slideDescription} colorText={slide.colorText}/>} 
+                            {slide?.title && <h1 className="title"  style={{color: slide.colorText ? slide.colorText : '' }}>{slide.title}</h1>}
+                            {slide?.subtitle && <h6 className="subtitle"  style={{color: slide.colorText ? slide.colorText : '' }}>{slide.subtitle}</h6>}
+                            {slide?.colorText &&  <RichText data={slide.slideDescription} colorText={slide.colorText}/>} 
                           </div>
                         </div>
                     </div>

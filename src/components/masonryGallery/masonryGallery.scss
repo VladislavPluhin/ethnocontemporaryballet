@@ -93,13 +93,11 @@
 
   .popup-body {
     padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #000;
-    box-shadow: 10px 10px 10px #000;
+
     width: 100%;
     max-width: 67vw;
     span {
+      color: #fff;
       transition: color .3s ease;
       display: block;
       margin-left: auto;
@@ -113,18 +111,23 @@
   }
 
   .popup-image {
-    padding-top: 55%;
+    object-fit: contain;
+    object-position: 50% 50%;
+    border-radius: 8px;
+    object-position: 0 0;
+    border-radius: 8px;
+    max-width: 60vh;
     width: 100%;
     position: relative;
     border-radius: 4px;
     overflow: hidden;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
+      height: auto;
+      border: 1px solid #000;
       object-fit: cover;
-      object-position: 0 0;
     }
   }

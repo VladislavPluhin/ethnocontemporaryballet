@@ -157,12 +157,10 @@ const Footer = () => {
         <div className="social-holder">
           <SocialList data={socialList} nameOfBlock={"footer"} />
           <div className="support-us">
-                <h5  >
-                  <span>{supportData.text}</span>
-                  <a href={supportData.iconLinkUrl}>
-                    <img  src={supportData.imageIcon.url} alt={supportData.imageIcon.title}/>
-                  </a>
-                </h5>
+              <span>{supportData.text}</span>
+              <a className="support-us__icon"  href={supportData.iconLinkUrl}>
+                <img  src={supportData.imageIcon.url} alt={supportData.imageIcon.title}/>
+              </a>
           </div>
           <div className="copyright-holder">
               <p>{data.contentfulFooterNavigation.copyright}</p>

@@ -20,13 +20,10 @@ function EventGallary({data}) {
                
                      <SwiperSlide key={slide.title +  id}>
                         <div className="event-gallery-card">
-                            <div className="bg-image"  style={{backgroundColor: '#000'}}>
+                            <div className="bg-image" >
                                 {slide.file.url && <img src={slide.file.url} alt={slide.title}/>}
                             </div> 
-                                <div className="event-gallery-card__body">
-                                        {slide.title && <h2 className="event-gallery-card__title">{slide.title } </h2>}
-                                        {slide.description && <h4 className="event-gallery-card__subtitle">{slide.description}</h4> }
-                                </div>
+                                
                         </div>
                     </SwiperSlide>
                

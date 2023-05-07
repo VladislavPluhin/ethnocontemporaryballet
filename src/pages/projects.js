@@ -38,9 +38,7 @@ export const query = graphql`
           }
           ... on ContentfulCardEvent {
             id
-            address {
-              raw
-            }
+           
             image {
               url
               description

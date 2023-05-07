@@ -5,9 +5,7 @@ import RichText from '../richText/richText'
 
 function SectionAbout ({data, indent=false})  {
   const sectionData = {...data[0]};
- 
   return (
-    
     <section className={indent ? 'section-about section-indent': 'section-about'}  style={{backgroundColor: sectionData.sectionColor? sectionData.sectionColor : '' }}>
         <div className="container"> 
           

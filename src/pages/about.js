@@ -16,15 +16,15 @@ const IndexPage =({data}) => {
           <div className="container"> 
             <div className="description">
                 {sectionData.title &&  <h2 className="title" style={{color: sectionData.textColor ? sectionData.textColor : '#0000' }}>{sectionData.title}</h2> }
-                {sectionData?.description &&  <RichText data={sectionData?.description} colorText={ sectionData.textColor}/>}
+                {data?.contentfulBlockDescription?.description &&  <RichText data={data.contentfulBlockDescription.description} colorText={ sectionData.textColor}/>}
             </div>
             {sectionData?.buttonURl   && <div className="btn-wrap">
                 <Link to={sectionData.buttonURl} className="link" style={{color: sectionData.textColor ? sectionData.textColor: '#0000' }}>{sectionData.buttonText}</Link>
               </div>}
               <div className="support-us">
-                    <h5  style={{color: sectionData.textColor ? sectionData.textColor : '#0000' }}>
-                      <span>{supportData.text}</span>
-                      <a href={supportData.iconLinkUrl}>
+                   <h5  style={{color: sectionData.textColor ? sectionData.textColor : '#0000' }}>
+                    {supportData.descriptionText && <RichText data={supportData.descriptionText} colorText={ sectionData.textColor}/> }
+                      <a className="support-us__icon" href={supportData.iconLinkUrl}>
                         <img  src={supportData.imageIcon.url} alt={supportData.imageIcon.title}/>
                       </a>
                     </h5>
@@ -41,6 +41,12 @@ export default IndexPage
 
 export const query = graphql`
 {
+  contentfulBlockDescription(nameBlock: {eq: "MainTextOnPage"}) {
+    id
+    description {
+      raw
+    }
+  }
   contentfulIconLink(nameIcon: {eq: "PayPal"}) {
     id
     imageIcon {
@@ -52,6 +58,9 @@ export const query = graphql`
     nameIcon
     text
     iconLinkUrl
+    descriptionText {
+      raw
+    }
   }
 
     contentfulGallery {
@@ -84,9 +93,6 @@ export const query = graphql`
           content
           description
           contentFilePath
-        }
-        description {
-          raw
         }
       }
     }

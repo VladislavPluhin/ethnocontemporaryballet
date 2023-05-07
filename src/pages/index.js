@@ -10,7 +10,7 @@ import * as sorts from '../components/sorts/sorts'
 
 const IndexPage =({data}) => {
   const pageData = {...data.allContentfulPage.nodes[0].sectionContents}
-
+  console.log(pageData)
     return (
       <Layout>
       <SectionMain  data={ sorts.getsortedData(pageData, 'ModelMainSlider')}/>
@@ -47,9 +47,6 @@ export const query = graphql`
           }
           ... on ContentfulCardEvent {
             id
-            address {
-              raw
-            }
             image {
               url
               description
@@ -96,8 +93,9 @@ export const query = graphql`
             position
             slug
           }
-        }
       
+         
+        }
       }
     }
   }
