@@ -7,14 +7,15 @@
     }
 }
 
+
+
+
 .swiper-event {
-    max-height: 650px;
     border-radius: 8px;
     overflow: hidden;
     border-radius: 8px;
     overflow: hidden;
-   
-    margin-bottom: 40px;
+    padding-bottom: 25px;
     display: flex;
 
     .swiper {
@@ -22,6 +23,7 @@
     }
     .swiper-slide {
         padding: 0;
+        display: flex;
     }
     .swiper-slide {
         height: auto;
@@ -37,6 +39,7 @@
             img {
                 border-radius: 8px;
                 box-shadow: rgb(39, 25, 124) 0px 0px 30px;
+                max-width: 100%;
             }
         }
     }
@@ -45,8 +48,10 @@
 }
 
 .event-gallery-card {
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     .event-gallery-card__body {
         transition: transform .3s ease;
         position: absolute;

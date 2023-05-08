@@ -356,9 +356,10 @@ section {
 .col {
   margin-bottom: 40px;
 }
-
-
-.section-content{
+section-projects {
+  
+}
+.section-content {
   color: #000;
   padding: 150px 0 40px;
   background-color: rgba(11, 0, 104, 0.0509803922);
@@ -372,9 +373,7 @@ section {
     position: relative;
   }
  
-  .container {
-    max-width: 1000px;
-  }
+
  
   &__image {
     max-width: 800px;

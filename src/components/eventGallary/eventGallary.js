@@ -9,10 +9,12 @@ import {  Navigation} from "swiper";
 
 function EventGallary({data}) {
     return(
-        <div className="swiper-event">
+        <div className="swiper-event ">
         <Swiper
             modules={[ Navigation]}
+            autoHeight = {true}
             slidesPerView={1}
+            spaceBetween={50}
             navigation
             >
             { data.map((slide, id)=> {
