@@ -25,7 +25,6 @@ const Footer = () => {
                   newEventsText
                   newEvent
                   nameEvent
-                  countPosition
                 }
                 ... on ContentfulPersonCard {
                   id

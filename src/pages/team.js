@@ -40,7 +40,6 @@ export const query = graphql`
           }
           ... on ContentfulCardEvent {
             id
-            countPosition
             image {
               url
               description

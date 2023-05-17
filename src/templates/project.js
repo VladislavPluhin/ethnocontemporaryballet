@@ -60,7 +60,6 @@ query MyQuery(
           descriptionEvent {
             raw
           }
-          countPosition
           nameBlock
           newEvent
           newEventsText
