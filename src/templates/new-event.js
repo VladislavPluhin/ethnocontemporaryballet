@@ -16,7 +16,6 @@ export default ({data}) => {
          <section className="section-content">
                <div className="container">
                       <article>
-                      {eventData?.newEvent && <a href={eventData.linkEvent}  className="event-new">{ eventData.newEventsText}</a>}
                          {eventData?.image?.url &&  <div className="section-content__image">
                             <img src={eventData?.image?.url} alt={eventData?.image?.description}/>
                         </div>}
