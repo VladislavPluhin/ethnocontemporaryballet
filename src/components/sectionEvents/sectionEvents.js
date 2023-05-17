@@ -15,8 +15,8 @@ function SectionEvents ( {data, eventCard='', indent=false})  {
     <section className= {indent ? 'section-events section-indent': 'section-events'} >
         <div className='container'>
           <div className="description">
-            {descriptionData[0]?.title && <h2 className="title">{descriptionData[0].title}</h2>} 
-            {descriptionData[0]?.description && <RichText data={descriptionData[0].description}/>}
+            {descriptionData[0]?.title && <h2 className="title">{descriptionData[0]?.title}</h2>} 
+            {descriptionData[0]?.description && <RichText data={descriptionData[0]?.description}/>}
           </div>
           <div className="row events-row">
             {EventsData.map((show)=> {
