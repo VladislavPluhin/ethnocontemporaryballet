@@ -10,7 +10,9 @@ function SectionEvents ( {data, eventCard='', indent=false})  {
 
   const descriptionData =  sorts.getsortedCards(data, "blockDescription")
   const EventsData= sorts.getsortedCards(data, eventCard)
-  
+ 
+  EventsData.sort((a, b) => parseInt(a.countPosition) - parseInt(b.countPosition));
+  console.log(EventsData)
   return (
     <section className= {indent ? 'section-events section-indent': 'section-events'} >
         <div className='container'>

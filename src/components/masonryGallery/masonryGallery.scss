@@ -93,41 +93,37 @@
 
   .popup-body {
     padding: 15px;
-
     width: 100%;
-    max-width: 67vw;
+    max-width: 80vw;
+    height: 90vh;
     span {
       color: #fff;
-      transition: color .3s ease;
+      transition: color .3s ease , text-shadow .3s ease;
       display: block;
       margin-left: auto;
-      margin-bottom: 15px;
       cursor: pointer;
       width: 40px;
+      margin-bottom: -40px;
+      z-index: 5;
+      color: #dfeef5;
+      position: relative;
+      text-shadow: 0px 0px 12px #544168;
       &:hover {
-        color: #b16f6f
+        color: #124e8d;
+        text-shadow: 0px 0px 12px #8ca3bb52;
       }
     }
   }
 
   .popup-image {
-    object-fit: contain;
-    object-position: 50% 50%;
+    text-align: center;
     border-radius: 8px;
-    object-position: 0 0;
-    border-radius: 8px;
-    max-width: 60vh;
-    width: 100%;
     position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
+    height: 100%;
     img {
-      width: 100%;
-      height: auto;
       border: 1px solid #000;
-      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
