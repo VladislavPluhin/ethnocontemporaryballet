@@ -13,7 +13,6 @@
             margin-left: 15px;
             margin-right: 0;
         }
-      
     }
 
     &__logo {
@@ -71,6 +70,7 @@
             content: "";
             transform: translateX(-50%);
         }
+       
         @media (min-width: 768px) { 
             display: none;
         }
@@ -86,6 +86,7 @@
             align-items: flex-start;
         }
     }
+   
     &__title {
         transition: color .3 ease;
         text-transform: capitalize;
